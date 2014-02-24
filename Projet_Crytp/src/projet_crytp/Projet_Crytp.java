@@ -17,7 +17,9 @@ public class Projet_Crytp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-
+        
+        //TEST
+        int num = 0;
     }
     
 }
