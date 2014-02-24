@@ -29,7 +29,7 @@ public class TestView extends JPanel
         this.add(btnSendTest);
     }
     
-    public String getTextTest()
+    public String GetTextTest()
     {
         return textFieldTest.getText();
     }
@@ -37,7 +37,7 @@ public class TestView extends JPanel
      /** ===================================================================
      * Listeners
      */
-    public void addSendTestListener(ActionListener p_listenForBtnSendTest)
+    public void AddSendTestListener(ActionListener p_listenForBtnSendTest)
     {
         btnSendTest.addActionListener(p_listenForBtnSendTest);
     }
