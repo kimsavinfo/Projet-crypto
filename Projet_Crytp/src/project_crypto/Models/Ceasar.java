@@ -1,4 +1,4 @@
-package projet_crytp;
+package project_crypto.Models;
 
 import java.util.List;
 

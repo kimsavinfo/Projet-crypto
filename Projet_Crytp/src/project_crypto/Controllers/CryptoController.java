@@ -6,6 +6,7 @@
 
 package project_crypto.Controllers;
 
+import project_crypto.Models.Ceasar;
 import project_crypto.Views.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,10 +22,13 @@ public class CryptoController
         // Fic import
         
         // View exemple
-        mainView = new MainView();
+       /* mainView = new MainView();
         mainView.setVisible(true);
         
-        mainView.ShowTestView();
+        mainView.ShowTestView();*/
+
+        Ceasar test = new Ceasar();
+        System.out.println(test.Crypting("ZZ", 2));
     }
 
     
