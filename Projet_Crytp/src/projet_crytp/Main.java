@@ -5,9 +5,10 @@ package projet_crytp;
  */
 public class Main {
 
-    public static void Main(String args[])
+    public static void main(String[] args)
     {
         Ceasar test = new Ceasar();
-        test.Crypting("aa", 2);
+        test.Crypting("AA", 2);
+
     }
 }
