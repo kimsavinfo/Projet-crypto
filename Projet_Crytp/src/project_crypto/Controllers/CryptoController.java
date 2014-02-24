@@ -7,6 +7,7 @@
 package project_crypto.Controllers;
 
 import project_crypto.Models.Ceasar;
+import project_crypto.Models.WordToNormalize;
 import project_crypto.Views.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,6 +30,10 @@ public class CryptoController
 
         Ceasar test = new Ceasar();
         System.out.println(test.Crypting("ZZ", 2));
+        
+        WordToNormalize testWord = new WordToNormalize();
+        System.out.print(testWord.sansAccent("l'oracle est Néo !"));
+ 
     }
 
     
