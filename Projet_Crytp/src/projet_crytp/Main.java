@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args)
     {
         Ceasar test = new Ceasar();
-        System.out.println(test.Decrypting("CC", 2));
+        System.out.println(test.Crypting("ZZ", 2));
     }
 }

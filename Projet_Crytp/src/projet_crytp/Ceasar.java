@@ -19,21 +19,35 @@ public class Ceasar {
             {
                 if(m_alphabet[j].equals(Character.toString(p_stringToCrypt.charAt(i))))
                 {
-                    this.m_encryptedString += m_alphabet[j+p_crytingKey];
+                    if(j+p_crytingKey <= m_alphabet.length)
+                    {
+                        this.m_encryptedString += m_alphabet[j+p_crytingKey];
+                    }
+                    else
+                    {
+                        this.m_encryptedString += m_alphabet[j+p_crytingKey - m_alphabet.length];
+                    }
                 }
             }
         }
         return this.m_encryptedString;
     }
 
-    
+
     public String Decrypting(String p_stringToDecrypt, int p_decryptingKey)
     {
         for(int i = 0; i <p_stringToDecrypt.length(); i++)
         {
             for(int j = 0; j < m_alphabet.length; j++)
             {
-                this.m_decryptedString += m_alphabet[j-p_decryptingKey];
+                if(j-p_decryptingKey < 0)
+                {
+
+                }
+                else
+                {
+                    this.m_decryptedString += m_alphabet[j-p_decryptingKey];
+                }
             }
         }
         return this.m_decryptedString;
