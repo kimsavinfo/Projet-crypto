@@ -14,7 +14,8 @@ import project_crypto.Views.MainView;
  */
 public class CryptoController 
 {
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         // Fic import
         
         // View exemple
