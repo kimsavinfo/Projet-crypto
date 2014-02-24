@@ -7,6 +7,8 @@
 package project_crypto.Controllers;
 
 import project_crypto.Views.MainView;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -19,6 +21,12 @@ public class CryptoController
         // Fic import
         
         // View exemple
-        MainView mainView = new MainView();
-    } 
+        mainView = new MainView();
+        mainView.setVisible(true);
+        
+        mainView.ShowTestView();
+    }
+
+    
+    private static MainView mainView;
 }

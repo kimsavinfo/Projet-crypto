@@ -6,6 +6,8 @@
 
 package project_crypto.Views;
 
+import javax.swing.JPanel;
+import java.awt.Color;
 import javax.swing.JFrame;
 
 /**
@@ -18,12 +20,27 @@ public class MainView extends JFrame
     {
         this.setTitle("CRYPTOGRAPHY");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(m_width, m_height);
+        this.setSize(Global.m_widthWindow, Global.m_heightWindow);
+        this.setBackground(Color.GRAY);
+        
+        testView = new TestView();
+        
+        refreshView(testView);
+    }
+    
+    
+    public void ShowTestView()
+    {
+        refreshView(testView);
+    }
+    
+    public void refreshView(JPanel p_panel)
+    {
+        this.add(p_panel);
     }
     
     /** ===================================================================
      * Properties
      */
-    private int m_width = 700;
-    private int m_height = 500;
+    private TestView testView;
 }
