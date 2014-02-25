@@ -130,7 +130,7 @@ public class WordToNormalize {
       *  @param chaine Chaine a convertir sans accent
       *  @return Chaine dont les accents ont été supprimé
       **/
-     public static java.lang.String sansAccent(java.lang.String chaine)
+     private static java.lang.String sansAccent(java.lang.String chaine)
      {  java.lang.StringBuffer Result  = new StringBuffer(chaine);
        
         for(int bcl = 0 ; bcl < Result.length() ; bcl++)
@@ -150,24 +150,22 @@ public class WordToNormalize {
      {
          String result="";
          p_chainToTest = this.sansAccent(p_chainToTest);
-             while(p_chainToTest.contains("'"))
-             {
-                 StringBuffer chainToAlter = new StringBuffer(p_chainToTest);
-                 chainToAlter = chainToAlter.deleteCharAt(chainToAlter.indexOf("'"));
-                 
-                 p_chainToTest = chainToAlter.toString();
-             }
+         StringBuffer normalizedChain = new StringBuffer(p_chainToTest);
+         String upperChain = p_chainToTest.toUpperCase();
+         
+            for(int i=0;i<p_chainToTest.length();i++)
+            {                
+                for(int j=0; j<m_alphabet.length;j++)
+                {
+                    if(m_alphabet[j].equals(Character.toString(upperChain.charAt(i))))
+                    {
+                     normalizedChain.append(Character.toString(upperChain.charAt(i)));
+                    }
+                }
+                
+            }
              
-             while(p_chainToTest.contains(" "))
-             {
-                 StringBuffer chainToAlter = new StringBuffer(p_chainToTest);
-                 chainToAlter = chainToAlter.deleteCharAt(chainToAlter.indexOf(" "));
-                 
-                 p_chainToTest = chainToAlter.toString();
-             }
-
-             
-             result = p_chainToTest.toUpperCase();
+             result = normalizedChain.toString();
              
          return result;
      }
