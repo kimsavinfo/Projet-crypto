@@ -150,11 +150,25 @@ public class WordToNormalize {
      {
          String result="";
          p_chainToTest = this.sansAccent(p_chainToTest);
-             if(p_chainToTest.contains("'"))
+             while(p_chainToTest.contains("'"))
              {
+                 StringBuffer chainToAlter = new StringBuffer(p_chainToTest);
+                 chainToAlter = chainToAlter.deleteCharAt(chainToAlter.indexOf("'"));
                  
+                 p_chainToTest = chainToAlter.toString();
              }
-  
+             
+             while(p_chainToTest.contains(" "))
+             {
+                 StringBuffer chainToAlter = new StringBuffer(p_chainToTest);
+                 chainToAlter = chainToAlter.deleteCharAt(chainToAlter.indexOf(" "));
+                 
+                 p_chainToTest = chainToAlter.toString();
+             }
+
+             
+             result = p_chainToTest.toUpperCase();
+             
          return result;
      }
 }
