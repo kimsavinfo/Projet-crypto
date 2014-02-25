@@ -13,7 +13,8 @@ import java.util.*;
  * @author edouard
  */
 public class WordToNormalize {
-    
+
+    public static String m_alphabet[] = new String[]{"A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T" ,"U", "V", "W", "X", "Y", "Z"};
       /** Index du 1er caractere accentué **/
      private static final int MIN = 192;
      /** Index du dernier caractere accentué **/

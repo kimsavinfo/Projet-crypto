@@ -7,19 +7,20 @@ import java.util.List;
  */
 public class Ceasar {
 
-    private static String m_alphabet[] = new String[]{"A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T" ,"U", "V", "W", "X", "Y", "Z"};
+
     private String m_encryptedString = "";
     private String m_decryptedString = "";
 
     public String Crypting(String p_stringToCrypt, int p_crytingKey)
     {
+        this.m_encryptedString = "";
         for(int i = 0; i < p_stringToCrypt.length(); i++)
         {
-            for(int j = 0; j < m_alphabet.length; j++)
+            for(int j = 0; j < WordToNormalize.m_alphabet.length; j++)
             {
-                if(m_alphabet[j].equals(Character.toString(p_stringToCrypt.charAt(i))))
+                if(WordToNormalize.m_alphabet[j].equals(Character.toString(p_stringToCrypt.charAt(i))))
                 {
-                    this.m_encryptedString += m_alphabet[(j+p_crytingKey)%m_alphabet.length];
+                    this.m_encryptedString += WordToNormalize.m_alphabet[(j+p_crytingKey)%WordToNormalize.m_alphabet.length];
                 }
             }
         }
@@ -29,18 +30,24 @@ public class Ceasar {
 
     public String Decrypting(String p_stringToDecrypt, int p_decryptingKey)
     {
+        this.m_decryptedString = "";
         for(int i = 0; i <p_stringToDecrypt.length(); i++)
         {
-            for(int j = 0; j < m_alphabet.length; j++)
+            for(int j = 0; j < WordToNormalize.m_alphabet.length; j++)
             {
-                System.out.println(modulo(j-p_decryptingKey, m_alphabet.length));
+                if(WordToNormalize.m_alphabet[j].equals(Character.toString(p_stringToDecrypt.charAt(i))))
+                {
+                    this.m_decryptedString += WordToNormalize.m_alphabet[moduloPositiv(p_decryptingKey, WordToNormalize.m_alphabet.length)];
+                }
             }
         }
         return this.m_decryptedString;
     }
 
-    public static int modulo(int p_number, int p_modulo)
+
+    public static int moduloPositiv(int p_number, int p_modulo)
     {
+        //This function prevents the return of a negativ modulo from the classic modulo function
         int result = p_number%p_modulo;
         if(result < 0)
         {
