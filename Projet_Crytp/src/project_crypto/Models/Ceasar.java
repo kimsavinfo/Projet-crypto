@@ -19,14 +19,7 @@ public class Ceasar {
             {
                 if(m_alphabet[j].equals(Character.toString(p_stringToCrypt.charAt(i))))
                 {
-                    if(j+p_crytingKey <= m_alphabet.length)
-                    {
-                        this.m_encryptedString += m_alphabet[j+p_crytingKey];
-                    }
-                    else
-                    {
-                        this.m_encryptedString += m_alphabet[j+p_crytingKey - m_alphabet.length];
-                    }
+                    this.m_encryptedString += m_alphabet[(j+p_crytingKey)%m_alphabet.length];
                 }
             }
         }
@@ -40,17 +33,20 @@ public class Ceasar {
         {
             for(int j = 0; j < m_alphabet.length; j++)
             {
-                if(j-p_decryptingKey < 0)
-                {
-
-                }
-                else
-                {
-                    this.m_decryptedString += m_alphabet[j-p_decryptingKey];
-                }
+                System.out.println(modulo(j-p_decryptingKey, m_alphabet.length));
             }
         }
         return this.m_decryptedString;
+    }
+
+    public static int modulo(int p_number, int p_modulo)
+    {
+        int result = p_number%p_modulo;
+        if(result < 0)
+        {
+            result += p_modulo;
+        }
+        return result;
     }
 
 
