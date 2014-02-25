@@ -15,6 +15,8 @@ import java.awt.event.ActionListener;
  *
  * @author kimsavinfo
  */
+
+
 public class CryptoController 
 {
     public static void main(String[] args) 
@@ -27,10 +29,13 @@ public class CryptoController
         
         mainView.ShowTestView();*/
 
-        Ceasar test = new Ceasar();
-        //System.out.println(test.Decrypting(test.Crypting("EE", 3), 5));
-        //test.Decrypting("EE", 2);
-        System.out.println( test.Decrypting("EE", 10));
+        Ceasar ceasar = new Ceasar();
+        //On crypte un string
+        String base = "AAA";
+        System.out.println("Base : "+base);
+        String crypted = ceasar.Crypting(base, 2);
+        String uncryptedWithKey = ceasar.Uncrypting(crypted, 2);
+        int key = ceasar.findCryptingKey(crypted);
     }
 
     
