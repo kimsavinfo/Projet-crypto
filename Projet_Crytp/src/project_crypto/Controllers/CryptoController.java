@@ -28,8 +28,7 @@ public class CryptoController
         mainView.ShowTestView();*/
 
         Ceasar test = new Ceasar();
-        System.out.println(test.Decrypting("HH", 2));
-
+        System.out.println(test.Crypting("ZZ", 2));
     }
 
     
