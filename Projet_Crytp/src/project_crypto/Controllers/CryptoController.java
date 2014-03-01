@@ -6,8 +6,6 @@
 
 package project_crypto.Controllers;
 
-import project_crypto.Models.Ceasar;
-import project_crypto.Models.WordToNormalize;
 import project_crypto.Views.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,22 +16,31 @@ import java.awt.event.ActionListener;
  */
 public class CryptoController 
 {
-    public static void main(String[] args) 
+    public static void main(String[] args)
     {
         // Fic import
         
         // View exemple
-       /* mainView = new MainView();
+        mainView = new MainView();
         mainView.setVisible(true);
+        mainView.GetTestView().AddSendTestListener(new TextTestListener());
         
-        mainView.ShowTestView();*/
+        mainView.ShowTestView();
 
-        Ceasar test = new Ceasar();
+        /*Ceasar test = new Ceasar();
         System.out.println(test.Crypting("ZZ", 2));
         
         WordToNormalize testWord = new WordToNormalize();
-        System.out.print(testWord.sansAccent("l'oracle est Néo !"));
+        System.out.print(testWord.sansAccent("l'oracle est Néo !"));*/
  
+    }
+
+    static class TextTestListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent e)
+        {
+            System.out.println(mainView.GetTestView().GetTextTest());
+        }
     }
 
     
