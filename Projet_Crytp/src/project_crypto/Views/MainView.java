@@ -9,7 +9,6 @@ package project_crypto.Views;
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JFrame;
-import java.awt.event.ActionListener;
 
 /**
  *
@@ -24,9 +23,9 @@ public class MainView extends JFrame
         this.setSize(Global.m_widthWindow, Global.m_heightWindow);
         this.setBackground(Color.GRAY);
         
-        testView = new TestView();
+        m_testView = new TestView();
         
-        RefreshView(testView);
+        RefreshView(m_testView);
     }
     
     public void RefreshView(JPanel p_panel)
@@ -37,17 +36,17 @@ public class MainView extends JFrame
     
     public void ShowTestView()
     {
-        RefreshView(testView);
+        RefreshView(m_testView);
     }
 
 
     public TestView GetTestView()
     {
-        return testView;
+        return m_testView;
     }
     
     /** ===================================================================
      * Properties
      */
-    private TestView testView;
+    private TestView m_testView;
 }

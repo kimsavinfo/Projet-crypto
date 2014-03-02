@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 import javax.swing.JFormattedTextField;
 import javax.swing.JButton;
 import java.awt.Dimension;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
@@ -21,17 +20,17 @@ public class TestView extends JPanel
 {
     public TestView()
     {
-        textFieldTest = new JFormattedTextField();
-        textFieldTest.setPreferredSize(new Dimension(Global.m_widthWindow - 40, Global.m_heightJFormattedTextField));
-        btnSendTest = new JButton("TEST");
+        m_textFieldTest = new JFormattedTextField();
+        m_textFieldTest.setPreferredSize(new Dimension(Global.m_widthWindow - 40, Global.m_heightJFormattedTextField));
+        m_btnSendTest = new JButton("TEST");
         
-        this.add(textFieldTest);
-        this.add(btnSendTest);
+        this.add(m_textFieldTest);
+        this.add(m_btnSendTest);
     }
     
     public String GetTextTest()
     {
-        return textFieldTest.getText();
+        return m_textFieldTest.getText();
     }
     
      /** ===================================================================
@@ -39,14 +38,14 @@ public class TestView extends JPanel
      */
     public void AddSendTestListener(ActionListener p_listenForBtnSendTest)
     {
-        btnSendTest.addActionListener(p_listenForBtnSendTest);
+        m_btnSendTest.addActionListener(p_listenForBtnSendTest);
     }
     
     
     /** ===================================================================
      * Properties
      */
-    private JFormattedTextField textFieldTest;
-    private JButton btnSendTest;
+    private JFormattedTextField m_textFieldTest;
+    private JButton m_btnSendTest;
     private String m_testResult;
 }

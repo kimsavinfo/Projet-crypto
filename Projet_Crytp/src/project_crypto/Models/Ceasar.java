@@ -1,13 +1,13 @@
 package project_crypto.Models;
 
-import java.util.List;
+import Library.Alphabet;
 
 /**
  * Created by nicolas on 24/02/14.
  */
 public class Ceasar {
 
-    private static String m_alphabet[] = new String[]{"A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T" ,"U", "V", "W", "X", "Y", "Z"};
+    private static String m_alphabet[] = new Alphabet().GetLatin();
     private String m_encryptedString = "";
     private String m_decryptedString = "";
 

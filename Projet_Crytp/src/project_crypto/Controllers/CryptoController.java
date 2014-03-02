@@ -6,6 +6,7 @@
 
 package project_crypto.Controllers;
 
+import Library.TextFileManager;
 import project_crypto.Views.MainView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,11 +22,19 @@ public class CryptoController
         // Fic import
         
         // View exemple
-        mainView = new MainView();
-        mainView.setVisible(true);
-        mainView.GetTestView().AddSendTestListener(new TextTestListener());
+        /*m_mainView = new MainView();
+        m_mainView.setVisible(true);
+        m_mainView.GetTestView().AddSendTestListener(new TextTestListener());
         
-        mainView.ShowTestView();
+        m_mainView.ShowTestView();*/
+
+        // Load file
+        TextFileManager textFileManager = new TextFileManager();
+        textFileManager.LoadFile("/home/kimsavinfo/git/Projet-crypto/Projet_Crytp/src/Test_TextFiles/ceasar.txt");
+        textFileManager.LetterFrequency();
+        // textFileManager.WriteFile(logFile.getCanonicalPath()); = ok works
+        textFileManager.WriteFile("/home/kimsavinfo/git/Projet-crypto/Projet_Crytp/src/Test_TextFiles/");
+
 
         /*Ceasar test = new Ceasar();
         System.out.println(test.Crypting("ZZ", 2));
@@ -39,10 +48,10 @@ public class CryptoController
     {
         public void actionPerformed(ActionEvent e)
         {
-            System.out.println(mainView.GetTestView().GetTextTest());
+            System.out.println(m_mainView.GetTestView().GetTextTest());
         }
     }
 
     
-    private static MainView mainView;
+    private static MainView m_mainView;
 }
